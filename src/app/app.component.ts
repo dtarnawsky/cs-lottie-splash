@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LottieSplashScreen } from '@ionic-native/lottie-splash-screen/ngx';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +7,17 @@ import { LottieSplashScreen } from '@ionic-native/lottie-splash-screen/ngx';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private lottieSplashScreen: LottieSplashScreen) {
+  constructor(private platform: Platform) {
     this.showSplash();
   }
 
   async showSplash() {
+    await this.platform.ready();
     console.log('Splash screen show');
-    await this.lottieSplashScreen.show('assets/bee.json', false, 1024, 768);
+    let lottie = (window as any).lottie;
+    await lottie.splashscreen.hide();
+//    await lottie.splashscreen.show('assets/bee.json', false, 1024, 768);
+    await lottie.splashscreen.show('https://assets.lottiefiles.com/datafiles/99nA1a7mkSF3Oz8/data.json', true, 1024, 768);
     console.log('Splash screen shown');
   }
 }
