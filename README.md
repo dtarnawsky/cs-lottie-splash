@@ -2,6 +2,7 @@
 Test for `cordova-plugin-lottie-splashscreen` to see if it will work in the Capacitor application. Result is a crash in Android, runs in iOS.
 
 ## Error in Android
+This occurs in Capacitor in versions 3.4.1 and below:
 java.lang.NullPointerException: Attempt to invoke virtual method 'void org.apache.cordova.CordovaPlugin.privateInitialize(java.lang.String, org.apache.cordova.CordovaInterface, org.apache.cordova.CordovaWebView, org.apache.cordova.CordovaPreferences)' on a null object reference
         at org.apache.cordova.PluginManager.getPlugin(PluginManager.java:171)
         at org.apache.cordova.PluginManager.startupPlugins(PluginManager.java:97)
