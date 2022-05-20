@@ -1,8 +1,6 @@
 # Sample Application
 Test for `cordova-plugin-lottie-splashscreen` to see if it will work in the Capacitor application. Result is a crash in Android, runs in iOS.
 
-https://github.com/dtarnawsky/cs-lottie-splash
-
 ## Error in Android Cap > 3.4.1
 Error will throw in `LottieSplashScreen.kt`:
 `webView.engine.evaluateJavascript("document.dispatchEvent(new Event('lottieAnimationStart'))") { }`
