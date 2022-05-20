@@ -1,6 +1,16 @@
 # Sample Application
 Test for `cordova-plugin-lottie-splashscreen` to see if it will work in the Capacitor application. Result is a crash in Android, runs in iOS.
 
+https://github.com/dtarnawsky/cs-lottie-splash
+
+## Error in Android Cap > 3.4.1
+Error will throw in `LottieSplashScreen.kt`:
+`webView.engine.evaluateJavascript("document.dispatchEvent(new Event('lottieAnimationStart'))") { }`
+
+where `webView.engine` is null
+
+A similar fix was done in Capacitor iOS in this [PR](https://github.com/ionic-team/capacitor/pull/4039/files) but Android still has this issue.
+
 ## Error in Android
 This occurs in Capacitor in versions 3.4.1 and below:
 java.lang.NullPointerException: Attempt to invoke virtual method 'void org.apache.cordova.CordovaPlugin.privateInitialize(java.lang.String, org.apache.cordova.CordovaInterface, org.apache.cordova.CordovaWebView, org.apache.cordova.CordovaPreferences)' on a null object reference
