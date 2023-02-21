@@ -8,4 +8,9 @@
   </feature>
 
   
+  <preference name="LottieAnimationLocation" value="public/assets/demo-lottie.json" />
+  <preference name="LottieFullScreen" value="false" />
+  <preference name="LottieLoopAnimation" value="true" />
+  <preference name="LottieWidth" value="200" />
+  <preference name="LottieHeight" value="200" />
 </widget>

@@ -1,7 +1,32 @@
 # Sample Application
 Test for `cordova-plugin-lottie-splashscreen` to see if it will work in the Capacitor application. Result is a crash in Android, runs in iOS.
 
-## Error in Android Cap > 3.4.1
+## Version 0.10.0
+Tested with Capacitor 4 with iOS and Android. This version works if setting initial values in `capacitor.config.ts`. For example:
+
+```typescript
+const config: CapacitorConfig = {
+  appId: 'io.ionic.lottie',
+  appName: 'cs-lottie-splash',
+  webDir: 'www',
+  bundledWebRuntime: false,
+  cordova: {
+    preferences: {
+      LottieAnimationLocation: 'public/assets/demo-lottie.json',
+      LottieFullScreen: 'false',
+      LottieLoopAnimation: 'true',
+      LottieWidth: '200',
+      LottieHeight: '200'
+    }
+  }
+};
+```
+
+Note: Android has the animation correctly centered. iOS does not.
+
+## Versions prior to 0.10.0
+
+The following error would occur with Capacitor 3.4.1 and above:
 Error will throw in `LottieSplashScreen.kt`:
 `webView.engine.evaluateJavascript("document.dispatchEvent(new Event('lottieAnimationStart'))") { }`
 
@@ -9,8 +34,9 @@ where `webView.engine` is null
 
 A similar fix was done in Capacitor iOS in this [PR](https://github.com/ionic-team/capacitor/pull/4039/files) but Android still has this issue.
 
-## Error in Android
-This occurs in Capacitor in versions 3.4.1 and below:
+## Error with Capacitor 3.4.1 and below
+This version of Capacitor did not support Kotlin. This occurs in Capacitor in versions 3.4.1 and below:
+```java
 java.lang.NullPointerException: Attempt to invoke virtual method 'void org.apache.cordova.CordovaPlugin.privateInitialize(java.lang.String, org.apache.cordova.CordovaInterface, org.apache.cordova.CordovaWebView, org.apache.cordova.CordovaPreferences)' on a null object reference
         at org.apache.cordova.PluginManager.getPlugin(PluginManager.java:171)
         at org.apache.cordova.PluginManager.startupPlugins(PluginManager.java:97)
@@ -33,3 +59,4 @@ java.lang.NullPointerException: Attempt to invoke virtual method 'void org.apach
         at java.lang.reflect.Method.invoke(Native Method)
         at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:492)
         at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:980)
+```
