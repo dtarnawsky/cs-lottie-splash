@@ -24,6 +24,17 @@ const config: CapacitorConfig = {
 
 Note: Android has the animation correctly centered. iOS does not.
 
+## Fixing for iOS
+Open `node_modules\cordova-plugin-lottie-splashscreen\plugin.xml` and comment out this line seen below:
+```xml
+     <platform name="ios">
+     <config-file target="config.xml" parent="/*"> 
+     <feature name="LottieSplashScreen"> 
+        <param name="ios-package" value="LottieSplashScreen" /> 
+        <!--    <param name="onload" value="true"/>--> 
+     </feature>
+```
+
 ## Versions prior to 0.10.0
 
 The following error would occur with Capacitor 3.4.1 and above:

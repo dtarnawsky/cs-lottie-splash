@@ -10,8 +10,11 @@ const config: CapacitorConfig = {
       LottieAnimationLocation: 'public/assets/demo-lottie.json',
       LottieFullScreen: 'false',
       LottieLoopAnimation: 'true',
-      LottieWidth: '200',
-      LottieHeight: '200'
+      LottieFadeOutDuration: '1',
+      LottieWidth: '0.9',
+      LottieHeight: '0.9',
+      LottieRelativeSize: 'true',
+      LottieBackgroundColor: '#7931AA',
     }
   }
 };
