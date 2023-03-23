@@ -1,5 +1,7 @@
 # Sample Application
-Test for `cordova-plugin-lottie-splashscreen` to see if it will work in the Capacitor application. Result is a crash in Android, runs in iOS.
+Test for `cordova-plugin-lottie-splashscreen` to see if it will work in the Capacitor application. 
+
+TLDR: It will run in Android and in iOS (with a tweak to plugin.xml).
 
 ## Version 0.10.0
 Tested with Capacitor 4 with iOS and Android. This version works if setting initial values in `capacitor.config.ts`. For example:
