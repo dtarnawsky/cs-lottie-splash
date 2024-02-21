@@ -8,7 +8,7 @@
 			"LottieAnimationLocation": "public/assets/demo-lottie.json",
 			"LottieFullScreen": "false",
 			"LottieLoopAnimation": "true",
-			"LottieFadeOutDuration": "1.0",
+			"LottieFadeOutDuration": "1",
 			"LottieWidth": "0.9",
 			"LottieHeight": "0.9",
 			"LottieRelativeSize": "true",

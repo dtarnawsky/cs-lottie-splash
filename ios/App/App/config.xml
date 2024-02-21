@@ -4,13 +4,14 @@
   
   <feature name="LottieSplashScreen">
     <param name="ios-package" value="LottieSplashScreen"/>
+    <param name="onload" value="true"/>
   </feature>
 
   
   <preference name="LottieAnimationLocation" value="public/assets/demo-lottie.json" />
   <preference name="LottieFullScreen" value="false" />
   <preference name="LottieLoopAnimation" value="true" />
-  <preference name="LottieFadeOutDuration" value="1.0" />
+  <preference name="LottieFadeOutDuration" value="1" />
   <preference name="LottieWidth" value="0.9" />
   <preference name="LottieHeight" value="0.9" />
   <preference name="LottieRelativeSize" value="true" />
